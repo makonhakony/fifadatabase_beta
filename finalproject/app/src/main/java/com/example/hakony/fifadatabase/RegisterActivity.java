@@ -1,6 +1,7 @@
 package com.example.hakony.fifadatabase;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -38,16 +39,28 @@ public class RegisterActivity extends AppCompatActivity {
                 final int age = Integer.parseInt(etAge.getText().toString());
 
 
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                final Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
                             if (success) {
-                                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                                RegisterActivity.this.startActivity(intent);
-                                Toast.makeText(RegisterActivity.this,"You are Register Successfully.", Toast.LENGTH_LONG).show();
+                                android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(RegisterActivity.this);
+                                builder.setMessage("You will need to shut down the program and re-run to avoid being crashed")
+                                        .setPositiveButton("Got it", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+                                                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                                RegisterActivity.this.startActivity(intent);
+                                                Toast.makeText(RegisterActivity.this,"You are Register Successfully.", Toast.LENGTH_LONG).show();
+                                            }
+                                        })
+                                        .create()
+                                        .show();
+
+
+
                             } else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                                 builder.setMessage("Register Failed")

@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
                     mTextMessage.setText("Home");
                     fragmentManager.beginTransaction().replace(R.id.container, new HomeFragment()).commit();
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText("Notifications");
-                    fragmentManager.beginTransaction().replace(R.id.container, new NotificationFragment()).commit();
+                case R.id.navigation_search:
+                    mTextMessage.setText("Search");
+                    fragmentManager.beginTransaction().replace(R.id.container, new SearchFragment()).commit();
                     return true;
             }
             return false;
