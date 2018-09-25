@@ -39,6 +39,7 @@
         android:layout_below="@id/ads"
         android:layout_centerHorizontal="true"
         app:cardBackgroundColor="@android:color/holo_green_light"
+        android:id="@+id/trailerbutton"
         >
 
         <RelativeLayout

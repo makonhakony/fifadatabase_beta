@@ -1,18 +1,17 @@
 package com.example.hakony.fifadatabase;
 
-import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
-
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -60,6 +59,16 @@ public class MainActivity extends AppCompatActivity {
         for (int image: images){
             FlipImage(image);
         }
+
+        final CardView trailerBtn= (CardView) findViewById(R.id.trailerbutton);
+
+        trailerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent traileractivity= new Intent(MainActivity.this,Trailer.class);
+                MainActivity.this.startActivity(traileractivity);
+            }
+        });
     }
 
     public void FlipImage(int image){
@@ -74,5 +83,7 @@ public class MainActivity extends AppCompatActivity {
         ads.setOutAnimation(this, android.R.anim.slide_out_right);
 
     }
+
+
 
 }

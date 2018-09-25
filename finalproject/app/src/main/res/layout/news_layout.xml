@@ -1,30 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/newsbg">
 
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="292dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/la_liga3" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="290dp"
-        android:layout_height="144dp"
-        android:layout_below="@+id/imageButton8"
-        android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/bundesliga2" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="wrap_content"
-        android:layout_height="173dp"
-        android:layout_below="@+id/imageButton5"
-        android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/pl" />
+            <LinearLayout
+                android:id="@+id/title1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/news_background"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ro_juve" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/alike_angular"
+                    android:text="Ronaldo transfer reports sends Juventus share prices soaring"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/title1"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/belgrano"
+                android:text="Goal.com" />
+
+            <TextView
+                android:id="@+id/content1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title1"
+                android:fontFamily="@font/belgrano"
+                android:paddingLeft="10dp"
+                android:text="      The Italian club' stocks closed a whopping 11 per cent up after news broke that the striker has agreed personal terms to move to Turin
+      News that Cristiano Ronaldo is close to a sensational move to Juventus sent share prices at the Italian club through the roof on Thursday." />
+
+            <LinearLayout
+                android:id="@+id/title2"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_below="@id/content1"
+                android:background="@drawable/news_background"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="151dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/france" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/belgrano"
+                    android:text="World Cup 2018: France celebrations continue and tournament memories – as it happened"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/title2"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/belgrano"
+                android:text="TheGuardian.com" />
+
+            <TextView
+                android:id="@+id/content2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title2"
+                android:fontFamily="@font/belgrano"
+                android:paddingLeft="10dp"
+                android:text="      France and Croatia returned home after the World Cup final, plus other reflections on the day after the tournament in Russia came to a close" />
+
+            <LinearLayout
+                android:id="@+id/title3"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_below="@id/content2"
+                android:background="@drawable/news_background"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="151dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/vietnam" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/titillium_web_extralight"
+                    android:text="U23 Vietnam return home as heroes"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/title3"
+                android:layout_alignParentEnd="true"
+                android:fontFamily="@font/belgrano"
+                android:text="vietnamnet.vn" />
+
+            <TextView
+                android:id="@+id/content3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title3"
+                android:fontFamily="@font/belgrano"
+                android:paddingLeft="10dp"
+                android:text="      U23 Vietnam and their coaches arrived at Noi Bai International Airport, Hanoi, on January 28 afternoon, concluding their incredible journey at the Asian Football Confederation (AFC) U23 Championship in China where they claimed the silver medal.
+
+" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
